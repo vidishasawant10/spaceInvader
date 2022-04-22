@@ -50,7 +50,7 @@ font = pygame.font.Font('freesansbold.ttf', 32)
 
 textX = 10
 textY = 10
-overfont = pygame.font.Font('freesansbold.ttf', 64)
+overfont = pygame.font.Font('freesansbold.ttf', 50)
 
 winfont = pygame.font.Font('freesansbold.ttf', 50)
 
@@ -62,7 +62,7 @@ def showscore(x, y):
 
 def gameovertext():
     over_text = overfont.render("Game Over You lose ", True, (255, 255, 255))
-    screen.blit(over_text, (200, 250))
+    screen.blit(over_text, (150, 250))
 
 
 def winovertext():
@@ -131,16 +131,16 @@ while running:
                 enemyY[j] = 2000
             gameovertext()
             break
-        elif score == 100:
+        elif score == 10:
             winovertext()
             break
 
         enemyX[i] += enemyX_change[i]
         if enemyX[i] <= 0:
-            enemyX_change[i] = 0.3
+            enemyX_change[i] = 0.4
             enemyY[i] += enemyY_change[i]
         elif enemyX[i] >= 769:
-            enemyX_change[i] = -0.3
+            enemyX_change[i] = -0.4
             enemyY[i] += enemyY_change[i]
 
         # collision
